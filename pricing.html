@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing — Francisco Costa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #111111;
+      --surface: #1a1a1a;
+      --border: #2a2a2a;
+      --accent: #3b9b6e;
+      --text: #ffffff;
+      --subtext: #aaaaaa;
+      --muted: #666666;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      background: var(--bg);
+      z-index: 50;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-name { font-weight: 700; font-size: 1rem; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      color: var(--subtext);
+      font-size: 0.9rem;
+      transition: color 0.15s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active { color: var(--text); font-weight: 600; }
+
+    .page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 6rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.78rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+
+    /* PRICING */
+    .pricing-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .pricing-header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .pricing-header p {
+      color: var(--subtext);
+      font-size: 0.92rem;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.2rem;
+      align-items: start;
+    }
+
+    .pricing-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+      background: #161616;
+      position: relative;
+    }
+
+    .pricing-card.popular {
+      border: 2px solid var(--text);
+    }
+
+    .popular-badge {
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--text);
+      color: var(--bg);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .pricing-card h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
+    }
+
+    .pricing-desc {
+      font-size: 0.83rem;
+      color: var(--subtext);
+      margin-bottom: 1.2rem;
+      line-height: 1.55;
+    }
+
+    .pricing-price {
+      font-size: 2rem;
+      font-weight: 800;
+      margin-bottom: 1.5rem;
+    }
+
+    .pricing-features {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .pricing-features li {
+      font-size: 0.85rem;
+      color: var(--subtext);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+    }
+
+    .pricing-features li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 640px) {
+      nav { padding: 0.8rem 1rem; }
+      .nav-links { gap: 1rem; }
+      .nav-links a { font-size: 0.78rem; }
+      .pricing-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-name">Francisco Costa</a>
+  <ul class="nav-links">
+    <li><a href="index.html">About</a></li>
+    <li><a href="index.html#projects">Projects</a></li>
+    <li><a href="pricing.html" class="active">Pricing</a></li>
+    <li><a href="contact.html">Contact me</a></li>
+  </ul>
+</nav>
+
+<div class="page">
+
+  <div class="pricing-header">
+    <h1>Backend Services Pricing</h1>
+    <p>Choose a package that suits your needs, or contact me for a custom-tailored offer.</p>
+  </div>
+
+  <div class="pricing-grid">
+
+    <div class="pricing-card">
+      <h3>Simple API</h3>
+      <p class="pricing-desc">Ideal for small projects that need a basic backend or REST API.</p>
+      <div class="pricing-price">from 80€</div>
+      <ul class="pricing-features">
+        <li>Up to 5 endpoints</li>
+        <li>Basic CRUD operations</li>
+        <li>MySQL database</li>
+        <li>Basic authentication</li>
+      </ul>
+    </div>
+
+    <div class="pricing-card popular">
+      <div class="popular-badge">Popular</div>
+      <h3>Full Backend</h3>
+      <p class="pricing-desc">Complete backend solution for web applications and businesses.</p>
+      <div class="pricing-price">from 300€</div>
+      <ul class="pricing-features">
+        <li>Everything from Simple API</li>
+        <li>Laravel app with Blade or API</li>
+        <li>Role-based access control</li>
+        <li>Email system integration</li>
+        <li>Admin dashboard</li>
+        <li>Up to 20 endpoints</li>
+      </ul>
+    </div>
+
+    <div class="pricing-card">
+      <h3>Enterprise</h3>
+      <p class="pricing-desc">Complex systems with full architecture design and documentation.</p>
+      <div class="pricing-price">from 1 000€</div>
+      <ul class="pricing-features">
+        <li>Everything from Full Backend</li>
+        <li>Queue &amp; job system</li>
+        <li>Redis caching layer</li>
+        <li>Full test coverage</li>
+        <li>API documentation</li>
+        <li>Docker setup</li>
+        <li>Unlimited endpoints</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer">© 2025 Francisco Costa · Porto, Portugal 🇵🇹</div>
+</div>
+
+</body>
+</html>
