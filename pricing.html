@@ -170,73 +170,119 @@
 <nav>
   <a href="index.html" class="nav-name">Francisco Costa</a>
   <ul class="nav-links">
-    <li><a href="index.html">About</a></li>
-    <li><a href="index.html#projects">Projects</a></li>
-    <li><a href="pricing.html" class="active">Pricing</a></li>
-    <li><a href="contact.html">Contact me</a></li>
+    <li><a href="index.html" data-i18n="nav-about">About</a></li>
+    <li><a href="index.html#projects" data-i18n="nav-projects">Projects</a></li>
+    <li><a href="pricing.html" class="active" data-i18n="nav-pricing">Pricing</a></li>
+    <li><a href="contact.html" data-i18n="nav-contact">Contact me</a></li>
+    <li><button id="lang-toggle" onclick="toggleLang()" style="background:none;border:1px solid var(--border);color:var(--subtext);border-radius:999px;padding:0.2rem 0.7rem;font-size:0.78rem;cursor:pointer;font-family:inherit;transition:color 0.2s,border-color 0.2s">PT</button></li>
   </ul>
 </nav>
 
 <div class="page">
 
   <div class="pricing-header">
-    <h1>Backend Services Pricing</h1>
-    <p>Choose a package that suits your needs, or contact me for a custom-tailored offer.</p>
+    <h1 data-i18n="pricing-title">Backend Services Pricing</h1>
+    <p data-i18n="pricing-subtitle">Choose a package that suits your needs, or contact me for a custom-tailored offer.</p>
   </div>
 
   <div class="pricing-grid">
 
     <div class="pricing-card">
-      <h3>Simple API</h3>
-      <p class="pricing-desc">Ideal for small projects that need a basic backend or REST API.</p>
+      <h3 data-i18n="plan1-name">Simple API</h3>
+      <p class="pricing-desc" data-i18n="plan1-desc">Ideal for small projects that need a basic backend or REST API.</p>
       <div class="pricing-price">from 80€</div>
       <ul class="pricing-features">
-        <li>Up to 5 endpoints</li>
-        <li>Basic CRUD operations</li>
-        <li>MySQL database</li>
-        <li>Basic authentication</li>
+        <li data-i18n="plan1-f1">Up to 5 endpoints</li>
+        <li data-i18n="plan1-f2">Basic CRUD operations</li>
+        <li data-i18n="plan1-f3">MySQL database</li>
+        <li data-i18n="plan1-f4">Basic authentication</li>
       </ul>
     </div>
 
     <div class="pricing-card popular">
-      <div class="popular-badge">Popular</div>
-      <h3>Full Backend</h3>
-      <p class="pricing-desc">Complete backend solution for web applications and businesses.</p>
+      <div class="popular-badge" data-i18n="popular-badge">Popular</div>
+      <h3 data-i18n="plan2-name">Full Backend</h3>
+      <p class="pricing-desc" data-i18n="plan2-desc">Complete backend solution for web applications and businesses.</p>
       <div class="pricing-price">from 200€</div>
       <ul class="pricing-features">
-        <li>Everything from Simple API</li>
-        <li>Laravel app with Blade or API</li>
-        <li>Role-based access control</li>
-        <li>Email system integration</li>
-        <li>Admin dashboard</li>
-        <!-- <li>Up to 20 endpoints</li> -->
+        <li data-i18n="plan2-f1">Everything from Simple API</li>
+        <li data-i18n="plan2-f2">Laravel app with Blade or API</li>
+        <li data-i18n="plan2-f3">Role-based access control</li>
+        <li data-i18n="plan2-f4">Email system integration</li>
+        <li data-i18n="plan2-f5">Admin dashboard</li>
       </ul>
     </div>
-<div class="pricing-card">
-  <h3>Full Stack Web Application</h3>
-  <p class="pricing-desc">
-    Production-ready web application with scalable architecture, authentication system and modern UI.
-  </p>
-  <div class="pricing-price">from 750€</div>
-  <ul class="pricing-features">
-    <li>Everything from Full Backend</li>
-    <li>Modern front-end (Blade-based UI)</li>
-    <li>Secure authentication (OAuth integration: Google, GitHub, Microsoft)</li>
-    <li>Role & permission management</li>
-    <!-- <li>Secure REST API architecture</li> -->
-    <li>Optimised database design</li>
-    <!-- <li>Production-ready Docker environment</li> -->
-    <!-- <li>API documentation (OpenAPI / Postman)</li> -->
-    <li>Logging & error handling system</li>
-    <!-- <li>Deployment guidance (VPS setup)</li> -->
-    <li>Technical documentation</li>
-  </ul>
-</div>
+
+    <div class="pricing-card">
+      <h3 data-i18n="plan3-name">Full Stack Web Application</h3>
+      <p class="pricing-desc" data-i18n="plan3-desc">Production-ready web application with scalable architecture, authentication system and modern UI.</p>
+      <div class="pricing-price">from 750€</div>
+      <ul class="pricing-features">
+        <li data-i18n="plan3-f1">Everything from Full Backend</li>
+        <li data-i18n="plan3-f2">Modern front-end (Blade-based UI)</li>
+        <li data-i18n="plan3-f3">Secure authentication (OAuth integration: Google, GitHub, Microsoft)</li>
+        <li data-i18n="plan3-f4">Role &amp; permission management</li>
+        <li data-i18n="plan3-f5">Optimised database design</li>
+        <li data-i18n="plan3-f6">Logging &amp; error handling system</li>
+        <li data-i18n="plan3-f7">Technical documentation</li>
+      </ul>
+    </div>
 
   </div>
 
   <div class="footer">© 2025 Francisco Costa · Porto, Portugal 🇵🇹</div>
 </div>
+
+<script>
+const translations = {
+  en: {
+    'nav-about': 'About', 'nav-projects': 'Projects', 'nav-pricing': 'Pricing', 'nav-contact': 'Contact me',
+    'pricing-title': 'Backend Services Pricing',
+    'pricing-subtitle': 'Choose a package that suits your needs, or contact me for a custom-tailored offer.',
+    'popular-badge': 'Popular',
+    'plan1-name': 'Simple API',
+    'plan1-desc': 'Ideal for small projects that need a basic backend or REST API.',
+    'plan1-f1': 'Up to 5 endpoints', 'plan1-f2': 'Basic CRUD operations', 'plan1-f3': 'MySQL database', 'plan1-f4': 'Basic authentication',
+    'plan2-name': 'Full Backend',
+    'plan2-desc': 'Complete backend solution for web applications and businesses.',
+    'plan2-f1': 'Everything from Simple API', 'plan2-f2': 'Laravel app with Blade or API', 'plan2-f3': 'Role-based access control', 'plan2-f4': 'Email system integration', 'plan2-f5': 'Admin dashboard',
+    'plan3-name': 'Full Stack Web Application',
+    'plan3-desc': 'Production-ready web application with scalable architecture, authentication system and modern UI.',
+    'plan3-f1': 'Everything from Full Backend', 'plan3-f2': 'Modern front-end (Blade-based UI)', 'plan3-f3': 'Secure authentication (OAuth integration: Google, GitHub, Microsoft)', 'plan3-f4': 'Role &amp; permission management', 'plan3-f5': 'Optimised database design', 'plan3-f6': 'Logging &amp; error handling system', 'plan3-f7': 'Technical documentation',
+  },
+  pt: {
+    'nav-about': 'Sobre', 'nav-projects': 'Projetos', 'nav-pricing': 'Preços', 'nav-contact': 'Contacto',
+    'pricing-title': 'Preços — Serviços Backend',
+    'pricing-subtitle': 'Escolhe o pacote que mais se adequa ao teu projeto, ou contacta-me para uma proposta personalizada.',
+    'popular-badge': 'Popular',
+    'plan1-name': 'API Simples',
+    'plan1-desc': 'Ideal para projetos pequenos que precisam de um backend básico ou REST API.',
+    'plan1-f1': 'Até 5 endpoints', 'plan1-f2': 'Operações CRUD básicas', 'plan1-f3': 'Base de dados MySQL', 'plan1-f4': 'Autenticação básica',
+    'plan2-name': 'Backend Completo',
+    'plan2-desc': 'Solução backend completa para aplicações web e negócios.',
+    'plan2-f1': 'Tudo do plano API Simples', 'plan2-f2': 'Aplicação Laravel com Blade ou API', 'plan2-f3': 'Controlo de acessos por função', 'plan2-f4': 'Integração de sistema de email', 'plan2-f5': 'Painel de administração',
+    'plan3-name': 'Aplicação Web Full Stack',
+    'plan3-desc': 'Aplicação web pronta para produção com arquitetura escalável, sistema de autenticação e UI moderna.',
+    'plan3-f1': 'Tudo do plano Backend Completo', 'plan3-f2': 'Front-end moderno (UI baseada em Blade)', 'plan3-f3': 'Autenticação segura (OAuth: Google, GitHub, Microsoft)', 'plan3-f4': 'Gestão de funções e permissões', 'plan3-f5': 'Design de base de dados otimizado', 'plan3-f6': 'Sistema de logging e gestão de erros', 'plan3-f7': 'Documentação técnica',
+  }
+};
+
+let currentLang = 'en';
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'pt' : 'en';
+  applyLang();
+}
+
+function applyLang() {
+  const t = translations[currentLang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.getElementById('lang-toggle').textContent = currentLang === 'en' ? 'PT' : 'EN';
+}
+</script>
 
 </body>
 </html>

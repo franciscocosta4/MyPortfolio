@@ -139,18 +139,19 @@
 <nav>
   <a href="index.html" class="nav-name">Francisco Costa</a>
   <ul class="nav-links">
-    <li><a href="index.html">About</a></li>
-    <li><a href="index.html#projects">Projects</a></li>
-    <li><a href="pricing.html">Pricing</a></li>
-    <li><a href="contact.html" class="active">Contact me</a></li>
+    <li><a href="index.html" data-i18n="nav-about">About</a></li>
+    <li><a href="index.html#projects" data-i18n="nav-projects">Projects</a></li>
+    <li><a href="pricing.html" data-i18n="nav-pricing">Pricing</a></li>
+    <li><a href="contact.html" class="active" data-i18n="nav-contact">Contact me</a></li>
+    <li><button id="lang-toggle" onclick="toggleLang()" style="background:none;border:1px solid var(--border);color:var(--subtext);border-radius:999px;padding:0.2rem 0.7rem;font-size:0.78rem;cursor:pointer;font-family:inherit;transition:color 0.2s,border-color 0.2s">PT</button></li>
   </ul>
 </nav>
 
 <div class="page">
 
   <div class="contact-card">
-    <h2>Contact me</h2>
-    <p>You can contact me via Email, GitHub or LinkedIn. I usually respond within a day.</p>
+    <h2 data-i18n="contact-title">Contact me</h2>
+    <p data-i18n="contact-subtitle">You can contact me via Email, GitHub or LinkedIn. I usually respond within a day.</p>
 
     <div class="contact-methods">
 
@@ -160,8 +161,8 @@
           <polyline points="2,4 12,13 22,4"/>
         </svg>
         <strong>Email</strong>
-        <a href="mailto:franciscocosta1514@gmail.com">
-          <span>franciscocosta1514@gmail.com</span>
+        <a href="/cdn-cgi/l/email-protection#1b7d697a7578726878747874686f7a2a2e2a2f5b7c767a727735787476">
+          <span><span class="__cf_email__" data-cfemail="3b5d495a5558524858545854484f5a0a0e0a0f7b5c565a525715585456">[email&#160;protected]</span></span>
         </a>
       </div>
 
@@ -190,6 +191,37 @@
 
   <div class="footer">© 2025 Francisco Costa · Porto, Portugal 🇵🇹</div>
 </div>
+
+<script>
+const translations = {
+  en: {
+    'nav-about': 'About', 'nav-projects': 'Projects', 'nav-pricing': 'Pricing', 'nav-contact': 'Contact me',
+    'contact-title': 'Contact me',
+    'contact-subtitle': 'You can contact me via Email, GitHub or LinkedIn. I usually respond within a day.',
+  },
+  pt: {
+    'nav-about': 'Sobre', 'nav-projects': 'Projetos', 'nav-pricing': 'Preços', 'nav-contact': 'Contacto',
+    'contact-title': 'Contacto',
+    'contact-subtitle': 'Podes contactar-me por Email, GitHub ou LinkedIn. Costumo responder no próprio dia.',
+  }
+};
+
+let currentLang = 'en';
+
+function toggleLang() {
+  currentLang = currentLang === 'en' ? 'pt' : 'en';
+  applyLang();
+}
+
+function applyLang() {
+  const t = translations[currentLang];
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined) el.innerHTML = t[key];
+  });
+  document.getElementById('lang-toggle').textContent = currentLang === 'en' ? 'PT' : 'EN';
+}
+</script>
 
 </body>
 </html>
