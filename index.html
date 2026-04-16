@@ -107,7 +107,32 @@
       align-items: center;
     }
 
+    .profile-icons button {
+      color: #ffffff;
+      background: transparent;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      padding: 0.4rem 1rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.02em;
+      font-family: inherit;
+      cursor: pointer;
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2);
+      transition: transform 0.16s ease, box-shadow 0.16s ease, background-color 0.16s ease;
+    }
+
     .profile-icons a:hover { color: var(--text); }
+    .profile-icons button:hover {
+      transform: translateY(-1px);
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.45);
+    }
+
+    .profile-icons button:focus-visible {
+      outline: 2px solid #ffffff;
+      outline-offset: 2px;
+    }
     .profile-icons svg { width: 20px; height: 20px; }
 
     .profile-name { font-size: 1.6rem; font-weight: 800; margin-bottom: 0.3rem; }
@@ -214,6 +239,26 @@
     }
 
     .exp-role { font-weight: 700; font-size: 1rem; margin-bottom: 0.35rem; }
+
+    .exp-featured-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 0.55rem;
+      overflow: hidden;
+    }
+
+    .exp-featured-icon img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+      display: block;
+    }
 
     .exp-tech-row {
       display: flex;
@@ -492,6 +537,7 @@
         <a href="https://www.linkedin.com/in/franciscocostaa/" target="_blank" title="LinkedIn">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
         </a>
+        <button id="resume-btn" type="button" title="Resume">Resume</button>
       </div>
       <div class="profile-name">Francisco Costa</div>
       <div class="profile-location">
@@ -509,29 +555,30 @@
     <div class="tech-grid" style="margin-bottom:1.5rem">
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" class="tech-icon-img" />PHP</span>
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg" class="tech-icon-img" />Laravel</span>
+      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" class="tech-icon-img" />.NET</span>
+      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="tech-icon-img" />PostgreSQL</span>
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" class="tech-icon-img" />MySQL</span>
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" class="tech-icon-img" />JavaScript</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="tech-icon-img" />Node.js</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" class="tech-icon-img" />Express</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="tech-icon-img" />PostgreSQL</span>
+      <!-- <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="tech-icon-img" />Node.js</span> -->
+      <!-- <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/express/express-original.svg" class="tech-icon-img" />Express</span> -->
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" class="tech-icon-img" />HTML</span>
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" class="tech-icon-img" />CSS</span>
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" class="tech-icon-img" />Git</span>
     </div>
-
+    
     <p style="font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem;margin-top:0" data-i18n="additional-languages">Additional languages</p>
     <div class="tech-grid" style="margin-bottom:1.5rem">
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" class="tech-icon-img" />Python</span>
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg" class="tech-icon-img" />C++</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" class="tech-icon-img" />C</span>
-    </div>
-
-    <p style="font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem;margin-top:0" data-i18n="learning-label">Learning</p>
-    <div class="tech-grid" style="margin-bottom:2.5rem">
       <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="tech-icon-img" />Java</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="tech-icon-img" />Node.js</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="tech-icon-img" />Spring Boot</span>
-      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="tech-icon-img" />PostgreSQL</span>
+      <!-- <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" class="tech-icon-img" />C</span> -->
+    </div>
+    
+    <p style="font-size:0.78rem;color:var(--subtext);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.6rem;margin-top:0" data-i18n="learning-label">Currently Learning</p>
+    <div class="tech-grid" style="margin-bottom:2.5rem">
+      <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" class="tech-icon-img" />.NET</span>
+      <span class="tech-item"><img src="https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/csharp/csharp-original.svg" class="tech-icon-img" />C#</span>
+      <!-- <span class="tech-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="tech-icon-img" />PostgreSQL</span> -->
     </div>
 
     <div class="exp-section">
@@ -608,16 +655,19 @@
           <div class="exp-timeline"><div class="exp-dot"></div></div>
           <div>
             <span class="exp-company-link">Self-learning</span>
+
             <div class="exp-role">Node.js, PostgreSQL, Java &amp; Spring Boot</div>
             <div class="exp-tech-row">
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="exp-tech-img" title="Node.js" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dotnetcore/dotnetcore-original.svg" class="exp-tech-img" title=".NET" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg" class="exp-tech-img" title="PostgreSQL" />
-              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="exp-tech-img" title="Java" />
               <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="exp-tech-img" title="Spring Boot" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" class="exp-tech-img" title="Java" />
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" class="exp-tech-img" title="Node.js" />
             </div>
             <div class="exp-period" data-i18n="period-5">Self-taught · ongoing</div>
             <div class="exp-desc" data-i18n="desc-5">
-              Expanding into the JavaScript ecosystem with Node.js and PostgreSQL on my own — exploring async programming, REST APIs with Express, and a different approach to relational databases. Also picking up <strong>Java</strong> and <strong>Spring Boot</strong>, exploring a more structured, enterprise-oriented approach to backend development.
+              I explored the JavaScript ecosystem with Node.js and PostgreSQL, and also worked with a more enterprise-oriented backend approach using Spring Boot. I built small projects in <strong>Spring Boot</strong> and <strong>Node.js</strong> to understand the strengths of each stack.
+              <br> But today, my <strong>main focus</strong> is <strong>.NET</strong> and the C# ecosystem.
             </div>
           </div>
         </div>
@@ -753,6 +803,13 @@ The project aims to demonstrate full-stack skills, including MVC architecture, a
     e.preventDefault();
     document.querySelector('#projects-page').scrollIntoView({ behavior: 'smooth' });
   });
+
+  const resumeBtn = document.getElementById('resume-btn');
+  if (resumeBtn) {
+    resumeBtn.addEventListener('click', () => {
+      alert('no resume available');
+    });
+  }
 </script>
 <script>
 const translations = {
@@ -776,7 +833,7 @@ const translations = {
     'period-4': '1st year · 2025 – present',
     'desc-4': `Currently in the first year of <strong>Computer Engineering at UTAD</strong>. The course introduced me to object-oriented programming with <strong>C++</strong> — classes, memory management, and systems thinking — and <strong>Python</strong>, reinforcing algorithmic foundations with a more high-level lens.`,
     'period-5': 'Self-taught · ongoing',
-    'desc-5': `Expanding into the JavaScript ecosystem with Node.js and PostgreSQL on my own — exploring async programming, REST APIs with Express, and a different approach to relational databases. Also picking up <strong>Java</strong> and <strong>Spring Boot</strong>, exploring a more structured, enterprise-oriented approach to backend development.`,
+    'desc-5': `I explored the JavaScript ecosystem with Node.js and PostgreSQL, and also worked with a more enterprise-oriented backend approach using Spring Boot. I built small projects in <strong>Spring Boot</strong> and <strong>Node.js</strong> to understand the strengths of each stack. Today, my main focus is <strong>.NET</strong> and the C# ecosystem.`,
     'projects-heading': 'Projects',
     'desc-cloudnotes': `A full-stack note-sharing web platform where students can publish, search, and save academic annotations by subject. Features a <strong style="color:var(--text)">gamification system</strong> where users level up by sharing notes, and a complete <strong style="color:var(--text)">admin dashboard</strong> with user management, access logs, point tracking, and published annotation oversight. Built with Laravel, MySQL, and Blade.`,
     'desc-devconnect': `Web application built with <strong style="color:var(--text)">Laravel and MySQL</strong> that works as a mini social network for developers — conceptually combining GitHub and Twitter, focused on sharing technical content and developer interaction. The project aims to demonstrate full-stack skills, including MVC architecture, authentication, relational databases, and a modern UI.`,
@@ -803,7 +860,7 @@ const translations = {
     'period-4': '1.º ano · 2025 – presente',
     'desc-4': `Atualmente no primeiro ano de <strong>Engenharia Informática na UTAD</strong>. O curso introduziu-me à programação orientada a objetos com <strong>C++</strong> — classes, gestão de memória e pensamento de sistemas — e a <strong>Python</strong>, consolidando as bases algorítmicas com uma perspetiva de mais alto nível.`,
     'period-5': 'Autodidata · em curso',
-    'desc-5': `A expandir para o ecossistema JavaScript com Node.js e PostgreSQL por conta própria — a explorar programação assíncrona, REST APIs com Express e uma abordagem diferente a bases de dados relacionais. A aprender também <strong>Java</strong> e <strong>Spring Boot</strong>, explorando uma abordagem mais estruturada e orientada para o desenvolvimento backend empresarial.`,
+    'desc-5': `Explorei o ecossistema JavaScript com Node.js e PostgreSQL e também trabalhei uma abordagem de backend mais orientada a enterprise com Spring Boot. Fiz pequenos projetos em <strong>Spring Boot</strong> e <strong>Node.js</strong> para compreender as vantagens de cada stack. Hoje, o meu foco principal é <strong>.NET</strong> e o ecossistema C#.`,
     'projects-heading': 'Projetos',
     'desc-cloudnotes': `Plataforma web full-stack de partilha de apontamentos onde estudantes podem publicar, pesquisar e guardar anotações académicas por disciplina. Inclui um <strong style="color:var(--text)">sistema de gamificação</strong> onde os utilizadores sobem de nível ao partilhar apontamentos, e um <strong style="color:var(--text)">painel de administração</strong> completo com gestão de utilizadores, registos de acesso, acompanhamento de pontos e supervisão de anotações. Desenvolvido com Laravel, MySQL e Blade.`,
     'desc-devconnect': `Aplicação web construída com <strong style="color:var(--text)">Laravel e MySQL</strong> que funciona como uma mini rede social para programadores — combinando conceptualmente o GitHub e o Twitter, focada na partilha de conteúdo técnico e interação entre developers. O projeto pretende demonstrar competências full-stack, incluindo arquitetura MVC, autenticação, bases de dados relacionais e uma UI moderna.`,
