@@ -5,143 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact — Francisco Costa</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --bg: #111111;
-      --surface: #1a1a1a;
-      --border: #2a2a2a;
-      --accent: #3b9b6e;
-      --text: #ffffff;
-      --subtext: #aaaaaa;
-      --muted: #666666;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      line-height: 1.6;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 1rem 2rem;
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 50;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav-name { font-weight: 700; font-size: 1rem; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: var(--subtext);
-      font-size: 0.9rem;
-      transition: color 0.15s;
-    }
-    .nav-links a:hover,
-    .nav-links a.active { color: var(--text); font-weight: 600; }
-
-    .page {
-      max-width: 740px;
-      margin: 0 auto;
-      padding: 3rem 1.5rem 6rem;
-      min-height: calc(100vh - 70px);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-
-    .footer {
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.78rem;
-      padding-top: 2rem;
-      border-top: 1px solid var(--border);
-      margin-top: 4rem;
-    }
-
-    /* CONTACT CARD */
-    .contact-card {
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 2.5rem;
-      background: #161616;
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .contact-card h2 {
-      font-size: 1.8rem;
-      font-weight: 800;
-      margin-bottom: 0.4rem;
-    }
-
-    .contact-card > p {
-      color: var(--subtext);
-      font-size: 0.9rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .contact-methods {
-      display: flex;
-      gap: 3.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .contact-method {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      text-align: center;
-      min-width: 80px;
-    }
-
-    .contact-method svg {
-      width: 42px;
-      height: 42px;
-    }
-
-    .contact-method strong {
-      font-size: 0.95rem;
-      font-weight: 700;
-    }
-
-    .contact-method span {
-      font-size: 0.82rem;
-      color: var(--subtext);
-    }
-
-    .contact-method a {
-      color: var(--subtext);
-      transition: color 0.15s;
-    }
-
-    .contact-method a:hover {
-      color: var(--text);
-    }
-
-    @media (max-width: 640px) {
-      nav { padding: 0.8rem 1rem; }
-      .nav-links { gap: 1rem; }
-      .nav-links a { font-size: 0.78rem; }
-      .contact-methods { gap: 2rem; justify-content: center; }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
 <nav>
   <a href="index.html" class="nav-name">Francisco Costa</a>
   <ul class="nav-links">
@@ -149,11 +17,11 @@
     <li><a href="index.html#projects" data-i18n="nav-projects">Projects</a></li>
     <li><a href="pricing.html" data-i18n="nav-pricing">Pricing</a></li>
     <li><a href="contact.html" class="active" data-i18n="nav-contact">Contact me</a></li>
-    <li><button id="lang-toggle" onclick="toggleLang()" style="background:none;border:1px solid var(--border);color:var(--subtext);border-radius:999px;padding:0.2rem 0.7rem;font-size:0.78rem;cursor:pointer;font-family:inherit;transition:color 0.2s,border-color 0.2s">PT</button></li>
+    <li><button id="lang-toggle" onclick="toggleLang()">PT</button></li>
   </ul>
 </nav>
 
-<div class="page">
+<div class="page contact">
 
   <div class="contact-card">
     <h2 data-i18n="contact-title">Contact me</h2>
@@ -197,37 +65,6 @@
 
   <div class="footer">© 2025 Francisco Costa · Porto, Portugal 🇵🇹</div>
 </div>
-
-<script>
-const translations = {
-  en: {
-    'nav-about': 'About', 'nav-projects': 'Projects', 'nav-pricing': 'Pricing', 'nav-contact': 'Contact me',
-    'contact-title': 'Contact me',
-    'contact-subtitle': 'You can contact me via Email, GitHub or LinkedIn. I usually respond within a day.',
-  },
-  pt: {
-    'nav-about': 'Sobre', 'nav-projects': 'Projetos', 'nav-pricing': 'Preços', 'nav-contact': 'Contacto',
-    'contact-title': 'Contacto',
-    'contact-subtitle': 'Podes contactar-me por Email, GitHub ou LinkedIn. Costumo responder no próprio dia.',
-  }
-};
-
-let currentLang = 'en';
-
-function toggleLang() {
-  currentLang = currentLang === 'en' ? 'pt' : 'en';
-  applyLang();
-}
-
-function applyLang() {
-  const t = translations[currentLang];
-  document.querySelectorAll('[data-i18n]').forEach(el => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) el.innerHTML = t[key];
-  });
-  document.getElementById('lang-toggle').textContent = currentLang === 'en' ? 'PT' : 'EN';
-}
-</script>
-
+<script src="scripts.js" defer></script>
 </body>
 </html>
