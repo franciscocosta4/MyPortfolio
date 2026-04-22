@@ -6,6 +6,7 @@ const translations = {
     'nav-projects': 'Projects',
     'nav-pricing': 'Pricing',
     'nav-contact': 'Contact me',
+    'resume-btn': 'Resume',
     // Pricing Page
     'pricing-title': 'Backend Services Pricing',
     'pricing-subtitle': 'Choose a package that suits your needs, or contact me for a custom-tailored offer.',
@@ -49,8 +50,9 @@ const translations = {
     'period-3': '2025 – Full-Stack Development with Laravel',
     'desc-3': 'Adopted Laravel as my main framework during my technical high school program in Computer Science. Built full-stack applications with authentication, admin dashboards, REST APIs, role-based access control, and gamification systems. CloudNotes and DevConnect are the main projects from this phase.',
     'period-4': '1st year · 2025 – present',
-    'desc-4': 'Currently in the first year of Computer Engineering at UTAD. The course introduced me to object-oriented programming with C++ — classes, memory management, and systems thinking — and Python, reinforcing algorithmic foundations with a more high-level lens.',
+    'desc-4': 'Currently in the first year of Computer Engineering at UTAD. The course introduced me to object-oriented programming with C++ — classes, memory management, and systems thinking — and Python, reinforcing algorithmic foundations with a more high-level lens. I\'ve also built simple web applications with Django for learning HTTP and web frameworks.',
     'period-5': 'Self-taught · ongoing',
+    'desc-springexpenses': 'A personal finance management application built with Spring Boot and React. Tracks incomes and expenses, detects overspending patterns, and provides financial insights based on 30-day and 90-day averages. Built with MVC architecture and PostgreSQL persistence.',
     'desc-5': 'I explored the JavaScript ecosystem with Node.js and PostgreSQL, and also worked with a more enterprise-oriented backend approach using Spring Boot. I built small projects in Spring Boot and Node.js to understand the strengths of each stack. But today, my main focus is .NET and the C# ecosystem.',
     'projects-heading': 'Projects',
   },
@@ -60,6 +62,7 @@ const translations = {
     'nav-projects': 'Projetos',
     'nav-pricing': 'Preços',
     'nav-contact': 'Contacto',
+    'resume-btn': 'CV',
     // Pricing Page
     'pricing-title': 'Preços — Serviços Backend',
     'pricing-subtitle': 'Escolhe o pacote que mais se adequa ao teu projeto, ou contacta-me para uma proposta personalizada.',
@@ -103,8 +106,9 @@ const translations = {
     'period-3': '2025 – Desenvolvimento full-stack com Laravel',
     'desc-3': 'Adotei o Laravel como framework principal durante o curso técnico de Informática. Desenvolvi aplicações full-stack com autenticação, painéis de administração, REST APIs, controlo de acessos por função e sistemas de gamificação. O CloudNotes e o DevConnect são os principais projetos desta fase.',
     'period-4': '1.º ano · 2025 – presente',
-    'desc-4': 'Atualmente no primeiro ano de Engenharia Informática na UTAD. O curso introduziu-me à programação orientada a objetos com C++ — classes, gestão de memória e pensamento de sistemas — e a Python, consolidando as bases algorítmicas com uma perspetiva de mais alto nível.',
+    'desc-4': 'Atualmente no primeiro ano de Engenharia Informática na UTAD. O curso introduziu-me à programação orientada a objetos com C++ — classes, gestão de memória e pensamento de sistemas — e a Python, consolidando as bases algorítmicas com uma perspetiva de mais alto nível. Também construí aplicações web simples com Django para aprender HTTP e frameworks web.',
     'period-5': 'Autodidata · em curso',
+    'desc-springexpenses': 'Uma aplicação de gestão de finanças pessoais construída com Spring Boot e React. Acompanha receitas e despesas, deteta padrões de gastos excessivos e fornece análises financeiras baseadas em médias de 30 e 90 dias. Construída com arquitetura MVC e persistência PostgreSQL.',
     'desc-5': 'Explorei o ecossistema JavaScript com Node.js e PostgreSQL e também trabalhei uma abordagem de backend mais orientada a enterprise com Spring Boot. Fiz pequenos projetos em Spring Boot e Node.js para compreender as vantagens de cada stack. Hoje, o meu foco principal é .NET e o ecossistema C#.',
     'projects-heading': 'Projetos',
   }
