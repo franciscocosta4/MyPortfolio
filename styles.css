@@ -17,6 +17,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5.5rem;
 }
 
 body {
@@ -96,7 +97,7 @@ nav {
 
 /* PAGE WRAPPER */
 .page {
-  max-width: 740px;
+  max-width: 860px;
   margin: 0 auto;
   padding: 3rem 1.5rem 6rem;
 }
@@ -367,7 +368,7 @@ nav {
 
 .exp-desc strong {
   color: var(--text);
-  font-weight: 600;
+  font-weight: 700;
 }
 
 /* WORK CARDS */

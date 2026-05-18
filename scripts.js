@@ -3,7 +3,7 @@ const translations = {
   en: {
     // Navigation
     'nav-about': 'About',
-    'nav-projects': 'Projects',
+    'nav-projects': 'My journey',
     'nav-pricing': 'Pricing',
     'nav-contact': 'Contact me',
     'resume-btn': 'Resume',
