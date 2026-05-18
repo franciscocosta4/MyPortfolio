@@ -211,11 +211,21 @@ nav {
   margin-bottom: 1.5rem;
 }
 
+/* Section meta (labels like "Main stack", "Additional languages") */
+.section-meta {
+  font-size: 0.78rem;
+  color: var(--subtext);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 0.6rem 0;
+}
+
 /* TECH GRID */
 .tech-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+  margin-bottom: 1.5rem;
 }
 
 .tech-item {
