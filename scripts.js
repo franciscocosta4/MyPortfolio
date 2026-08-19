@@ -3,7 +3,7 @@ const translations = {
   en: {
     // Navigation
     'nav-about': 'About',
-    'nav-projects': 'My journey',
+    'nav-journey': 'My journey',
     'nav-pricing': 'Pricing',
     'nav-contact': 'Contact me',
     'resume-btn': 'Resume',
@@ -52,14 +52,17 @@ const translations = {
     'period-4': '1st year · 2025 – present',
     'desc-4': 'Currently in the first year of Computer Engineering at UTAD. The course introduced me to object-oriented programming with C++ — classes, memory management, and systems thinking — and Python, reinforcing algorithmic foundations with a more high-level lens. I\'ve also built simple web applications with Django for learning HTTP and web frameworks.',
     'period-5': 'Self-taught · ongoing',
+    'desc-cloudnotes': 'A full-stack note-sharing web platform where students can publish, search, and save academic annotations by subject. It includes a gamification system where users level up by sharing notes, and a complete admin dashboard with user management, access logs, point tracking, and publication oversight. Built with Laravel, MySQL, and Blade.',
+    'desc-devconnect': 'A web application built with Laravel and MySQL that works like a mini social network for developers — combining the ideas of GitHub and Twitter to promote technical content sharing and developer interaction. The project demonstrates full-stack skills, including MVC architecture, authentication, relational databases, and a modern UI.',
     'desc-springexpenses': 'A personal finance management application built with Spring Boot and React. Tracks incomes and expenses, detects overspending patterns, and provides financial insights based on 30-day and 90-day averages. Built with MVC architecture and PostgreSQL persistence.',
+    'desc-hermes': 'A personal finance manager for the web built in .NET. It allows users to track income and expenses, categorize them, and gain insights into spending habits. The main goal is to help users monitor overspending and generate summary and forecast reports based on historical data.',
     'desc-5': 'I explored the JavaScript ecosystem with Node.js and PostgreSQL, and also worked with a more enterprise-oriented backend approach using Spring Boot. I built small projects in Spring Boot and Node.js to understand the strengths of each stack. But today, my main focus is .NET and the C# ecosystem.',
     'projects-heading': 'Projects',
   },
   pt: {
     // Navigation
     'nav-about': 'Sobre',
-    'nav-projects': 'Projetos',
+    'nav-journey': 'O meu percurso',
     'nav-pricing': 'Preços',
     'nav-contact': 'Contacto',
     'resume-btn': 'CV',
@@ -108,7 +111,10 @@ const translations = {
     'period-4': '1.º ano · 2025 – presente',
     'desc-4': 'Atualmente no primeiro ano de Engenharia Informática na UTAD. O curso introduziu-me à programação orientada a objetos com C++ — classes, gestão de memória e pensamento de sistemas — e a Python, consolidando as bases algorítmicas com uma perspetiva de mais alto nível. Também construí aplicações web simples com Django para aprender HTTP e frameworks web.',
     'period-5': 'Autodidata · em curso',
+    'desc-cloudnotes': 'Uma plataforma web full-stack para partilha de apontamentos onde os estudantes podem publicar, procurar e guardar anotações académicas por disciplina. Inclui um sistema de gamificação em que os utilizadores sobem de nível ao partilhar apontamentos e um painel de administração completo com gestão de utilizadores, registos de acesso, controlo de pontos e supervisão de publicações. Desenvolvida com Laravel, MySQL e Blade.',
+    'desc-devconnect': 'Uma aplicação web construída com Laravel e MySQL que funciona como uma mini rede social para programadores — combinando ideias do GitHub e do Twitter para promover a partilha de conteúdo técnico e a interação entre developers. O projeto demonstra competências full-stack, incluindo arquitetura MVC, autenticação, bases de dados relacionais e uma interface moderna.',
     'desc-springexpenses': 'Uma aplicação de gestão de finanças pessoais construída com Spring Boot e React. Acompanha receitas e despesas, deteta padrões de gastos excessivos e fornece análises financeiras baseadas em médias de 30 e 90 dias. Construída com arquitetura MVC e persistência PostgreSQL.',
+    'desc-hermes': 'Um gestor de finanças pessoais para a web desenvolvido em .NET. Permite acompanhar rendimentos e despesas, categorizá-los e obter informações sobre os hábitos de consumo. O objetivo principal é ajudar os utilizadores a controlar o excesso de gastos e a gerar relatórios de resumo e previsão com base em dados históricos.',
     'desc-5': 'Explorei o ecossistema JavaScript com Node.js e PostgreSQL e também trabalhei uma abordagem de backend mais orientada a enterprise com Spring Boot. Fiz pequenos projetos em Spring Boot e Node.js para compreender as vantagens de cada stack. Hoje, o meu foco principal é .NET e o ecossistema C#.',
     'projects-heading': 'Projetos',
   }
@@ -129,6 +135,12 @@ function applyLang() {
   });
   document.getElementById('lang-toggle').textContent = currentLang === 'en' ? 'PT' : 'EN';
 }
+
+document.querySelectorAll('img').forEach(image => {
+  if (!image.hasAttribute('alt')) image.setAttribute('alt', '');
+  if (!image.hasAttribute('loading')) image.setAttribute('loading', 'lazy');
+  image.decoding = 'async';
+});
 
 // Initialize translations on page load
 document.addEventListener('DOMContentLoaded', applyLang);
