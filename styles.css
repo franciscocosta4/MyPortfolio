@@ -95,6 +95,77 @@ nav {
   border-color: var(--text);
 }
 
+/* HAMBURGER MENU */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 51;
+}
+
+.nav-toggle svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--text);
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    max-width: 300px;
+    background: var(--bg);
+    flex-direction: column;
+    padding: 6rem 2rem 2rem;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    border-left: 1px solid var(--border);
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+    z-index: 50;
+  }
+
+  .nav-links.open {
+    transform: translateX(0);
+  }
+
+  .nav-links a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid var(--border);
+    width: 100%;
+    display: block;
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  #lang-toggle {
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-open {
+    display: none;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-close {
+    display: block;
+  }
+}
+
 /* PAGE WRAPPER */
 .page {
   max-width: 860px;
@@ -111,6 +182,25 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+/* FLUID TYPOGRAPHY */
+.section-heading {
+  font-size: clamp(1.3rem, 3vw, 1.6rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.profile-name {
+  font-size: clamp(1.3rem, 4vw, 1.6rem);
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+.pricing-price {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 800;
+  margin-bottom: 1.5rem;
 }
 
 /* FOOTER */
@@ -412,6 +502,9 @@ nav {
   height: 400px;
   overflow: hidden;
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .work-screenshot img {
@@ -419,7 +512,8 @@ nav {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
+  margin: 0 auto;
 }
 
 .work-mock {
@@ -732,33 +826,323 @@ nav {
 }
 
 /* RESPONSIVE */
-@media (max-width: 640px) {
-  nav {
-    padding: 0.8rem 1rem;
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .nav-links {
-    gap: 1rem;
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
+}
 
-  .nav-links a {
-    font-size: 0.78rem;
+@media (max-width: 768px) {
+  .nav-name {
+    font-size: 0.9rem;
   }
 
   .page {
-    padding: 2rem 1rem 4rem;
+    padding: 2.5rem 1.25rem 5rem;
   }
 
-  .pricing-grid {
-    grid-template-columns: 1fr;
+  .profile-card {
+    padding: 1.5rem;
+  }
+
+  .profile-icons {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .profile-icons button {
+    padding: 0.35rem 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .section-heading {
+    margin-bottom: 1.25rem;
+  }
+
+  .exp-section {
+    margin-bottom: 3rem;
+  }
+
+  .work-section {
+    margin-bottom: 3rem;
+  }
+
+  .work-screenshot {
+    height: 300px;
   }
 
   .projects-grid {
     grid-template-columns: 1fr;
   }
 
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pricing-header h1 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+  }
+
+  .contact-card {
+    padding: 2rem 1.5rem;
+  }
+
   .contact-methods {
     gap: 2rem;
-    justify-content: center;
+  }
+
+  .contact-method svg {
+    width: 36px;
+    height: 36px;
+  }
+
+  .footer {
+    font-size: 0.72rem;
+    padding-top: 1.5rem;
+  }
+}
+
+@media (max-width: 640px) {
+  nav {
+    padding: 0.8rem 1rem;
+  }
+
+  .nav-name {
+    font-size: 0.85rem;
+  }
+
+  .page {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .profile-card {
+    padding: 1.25rem;
+    border-radius: 10px;
+  }
+
+  .profile-icons {
+    top: 1.25rem;
+    right: 1.25rem;
+    gap: 0.5rem;
+  }
+
+  .profile-icons a svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .profile-icons button {
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .profile-location {
+    font-size: 0.82rem;
+  }
+
+  .profile-bio {
+    font-size: 0.92rem;
+  }
+
+  .section-meta {
+    font-size: 0.72rem;
+  }
+
+  .tech-item {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.75rem;
+  }
+
+  .tech-icon-img {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Experience timeline - stack on mobile */
+  .exp-item {
+    grid-template-columns: 1fr;
+    padding-left: 1.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .exp-timeline {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .exp-dot {
+    margin-top: 2px;
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+  }
+
+  .exp-line {
+    display: none;
+  }
+
+  .exp-company-link {
+    font-size: 0.8rem;
+  }
+
+  .exp-role {
+    font-size: 0.95rem;
+  }
+
+  .exp-featured-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .exp-featured-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .exp-tech {
+    width: 20px;
+    height: 20px;
+    font-size: 8px;
+  }
+
+  .exp-tech-img {
+    width: 20px;
+    height: 20px;
+  }
+
+  .exp-period {
+    font-size: 0.75rem;
+  }
+
+  .exp-desc {
+    font-size: 0.82rem;
+  }
+
+  /* Work cards */
+  .work-card {
+    min-height: auto;
+  }
+  .work-screenshot {
+    display: none;
+  }
+
+  .work-info {
+    padding: 0.9rem 1rem 1rem;
+  }
+
+  .work-title {
+    font-size: 0.92rem;
+  }
+
+  .work-badge {
+    padding: 0.15rem 0.55rem;
+    font-size: 0.68rem;
+  }
+
+  .work-desc {
+    font-size: 0.78rem;
+  }
+
+  /* Projects grid */
+  .proj-card {
+    padding: 1.2rem;
+  }
+
+  .proj-name {
+    font-size: 0.9rem;
+  }
+
+  .proj-desc {
+    font-size: 0.78rem;
+  }
+
+  .proj-tag {
+    font-size: 0.65rem;
+    padding: 0.1rem 0.45rem;
+  }
+
+  /* Contact */
+  .contact-card h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-card > p {
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-methods {
+    gap: 1.5rem;
+  }
+
+  .contact-method strong {
+    font-size: 0.88rem;
+  }
+
+  .contact-method span {
+    font-size: 0.78rem;
+  }
+
+  .contact-method svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  /* Pricing */
+  .pricing-card {
+    padding: 1.5rem;
+  }
+
+  .pricing-card h3 {
+    font-size: 1.05rem;
+  }
+
+  .pricing-desc {
+    font-size: 0.8rem;
+  }
+
+  .pricing-features li {
+    font-size: 0.8rem;
+  }
+
+  .footer {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-name {
+    font-size: 1.25rem;
+  }
+
+  .work-screenshot {
+    height: 400px;
+  }
+
+  .contact-methods {
+    flex-direction: column;
+    gap: 1.25rem;
+    align-items: center;
+  }
+
+  .contact-method {
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 280px;
+    text-align: left;
+    gap: 0.75rem;
+  }
+
+  .contact-method svg {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
   }
 }
