@@ -57,7 +57,7 @@ const translations = {
     'desc-devconnect': 'A web application built with Laravel and MySQL that works like a mini social network for developers — combining the ideas of GitHub and Twitter to promote technical content sharing and developer interaction. The project demonstrates full-stack skills, including MVC architecture, authentication, relational databases, and a modern UI.',
     'desc-springexpenses': 'A personal finance management application built with Spring Boot and React. Tracks incomes and expenses, detects overspending patterns, and provides financial insights based on 30-day and 90-day averages. Built with MVC architecture and PostgreSQL persistence.',
     'desc-hermes': 'A personal finance manager for the web built in .NET. It allows users to track income and expenses, categorize them, and gain insights into spending habits. The main goal is to help users monitor overspending and generate summary and forecast reports based on historical data.',
-    'desc-5': 'I explored the JavaScript ecosystem with Node.js and PostgreSQL. I built small projects in Node.js to understand the strengths of the Javascript stack. But today, my main focus is .NET and the C# ecosystem.',
+    'desc-5': 'I explored the JavaScript ecosystem with Node.js and PostgreSQL, and also worked with a more enterprise-oriented backend approach using Spring Boot. I built small projects in Spring Boot and Node.js to understand the strengths of each stack. But today, my main focus is .NET and the C# ecosystem.',
     'projects-heading': 'Projects',
   },
   pt: {
@@ -117,7 +117,7 @@ const translations = {
     'desc-devconnect': 'Uma aplicação web construída com Laravel e MySQL que funciona como uma mini rede social para programadores — combinando ideias do GitHub e do Twitter para promover a partilha de conteúdo técnico e a interação entre developers. O projeto demonstra competências full-stack, incluindo arquitetura MVC, autenticação, bases de dados relacionais e uma interface moderna.',
     'desc-springexpenses': 'Uma aplicação de gestão de finanças pessoais construída com Spring Boot e React. Acompanha receitas e despesas, deteta padrões de gastos excessivos e fornece análises financeiras baseadas em médias de 30 e 90 dias. Construída com arquitetura MVC e persistência PostgreSQL.',
     'desc-hermes': 'Um gestor de finanças pessoais para a web desenvolvido em .NET. Permite acompanhar rendimentos e despesas, categorizá-los e obter informações sobre os hábitos de consumo. O objetivo principal é ajudar os utilizadores a controlar o excesso de gastos e a gerar relatórios de resumo e previsão com base em dados históricos.',
-    'desc-5': 'Explorei o ecossistema JavaScript com Node.js e PostgreSQL. Fiz pequenos projetos em Node.js para compreender as vantagens da stack javascript. Hoje, o meu foco principal é .NET e o ecossistema C#.',
+    'desc-5': 'Explorei o ecossistema JavaScript com Node.js e PostgreSQL e também trabalhei uma abordagem de backend mais orientada a enterprise com Spring Boot. Fiz pequenos projetos em Spring Boot e Node.js para compreender as vantagens de cada stack. Hoje, o meu foco principal é .NET e o ecossistema C#.',
     'projects-heading': 'Projetos',
   }
 };
