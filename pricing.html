@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,11 +11,11 @@
 <nav>
   <a href="index.html" class="nav-name">Francisco Costa</a>
   <ul class="nav-links" id="nav-links">
-    <li><a href="index.html" data-i18n="nav-about">About</a></li>
-    <li><a href="index.html#projects" data-i18n="nav-projects">My journey</a></li>
-    <li><a href="pricing.html" class="active" data-i18n="nav-pricing">Pricing</a></li>
-    <li><a href="contact.html" data-i18n="nav-contact">Contact me</a></li>
-    <li><button id="lang-toggle" onclick="toggleLang()">PT</button></li>
+    <li><a href="index.html" data-i18n="nav-about">Sobre</a></li>
+    <li><a href="index.html#projects" data-i18n="nav-projects">O meu percurso</a></li>
+    <li><a href="pricing.html" class="active" data-i18n="nav-pricing">Preços</a></li>
+    <li><a href="contact.html" data-i18n="nav-contact">Contacto</a></li>
+    
   </ul>
   <button class="nav-toggle" id="nav-toggle" aria-label="Menu" onclick="toggleMenu()" aria-expanded="false">
     <svg class="nav-toggle-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -26,50 +26,50 @@
 <main class="page pricing">
 
   <div class="pricing-header">
-    <h1 data-i18n="pricing-title">Backend Services Pricing</h1>
-    <p data-i18n="pricing-subtitle">Choose a package that suits your needs, or contact me for a custom-tailored offer.</p>
+    <h1 data-i18n="pricing-title">Preços — Serviços Backend</h1>
+    <p data-i18n="pricing-subtitle">Escolhe o pacote que mais se adequa ao teu projeto, ou contacta-me para uma proposta personalizada.</p>
   </div>
 
   <div class="pricing-grid">
 
     <div class="pricing-card">
-      <h3 data-i18n="plan1-name">Simple API</h3>
-      <p class="pricing-desc" data-i18n="plan1-desc">Ideal for small projects that need a basic backend or REST API.</p>
+      <h3 data-i18n="plan1-name">API Simples</h3>
+      <p class="pricing-desc" data-i18n="plan1-desc">Ideal para projetos pequenos que precisam de um backend básico ou REST API.</p>
       <div class="pricing-price">from 80€</div>
       <ul class="pricing-features">
-        <li data-i18n="plan1-f1">Up to 5 endpoints</li>
-        <li data-i18n="plan1-f2">Basic CRUD operations</li>
-        <li data-i18n="plan1-f3">MySQL database</li>
-        <li data-i18n="plan1-f4">Basic authentication</li>
+        <li data-i18n="plan1-f1">Até 5 endpoints</li>
+        <li data-i18n="plan1-f2">Operações CRUD básicas</li>
+        <li data-i18n="plan1-f3">Base de dados MySQL</li>
+        <li data-i18n="plan1-f4">Autenticação básica</li>
       </ul>
     </div>
 
     <div class="pricing-card popular">
       <div class="popular-badge" data-i18n="popular-badge">Popular</div>
-      <h3 data-i18n="plan2-name">Full Backend</h3>
-      <p class="pricing-desc" data-i18n="plan2-desc">Complete backend solution for web applications and businesses.</p>
+      <h3 data-i18n="plan2-name">Backend Completo</h3>
+      <p class="pricing-desc" data-i18n="plan2-desc">Solução backend completa para aplicações web e negócios.</p>
       <div class="pricing-price">from 200€</div>
       <ul class="pricing-features">
-        <li data-i18n="plan2-f1">Everything from Simple API</li>
-        <li data-i18n="plan2-f2">Laravel app with Blade or API</li>
-        <li data-i18n="plan2-f3">Role-based access control</li>
-        <li data-i18n="plan2-f4">Email system integration</li>
-        <li data-i18n="plan2-f5">Admin dashboard</li>
+        <li data-i18n="plan2-f1">Tudo do plano API Simples</li>
+        <li data-i18n="plan2-f2">Aplicação Laravel com Blade ou API</li>
+        <li data-i18n="plan2-f3">Controlo de acessos por função</li>
+        <li data-i18n="plan2-f4">Integração de sistema de email</li>
+        <li data-i18n="plan2-f5">Painel de administração</li>
       </ul>
     </div>
 
     <div class="pricing-card">
-      <h3 data-i18n="plan3-name">Full Stack Web Application</h3>
-      <p class="pricing-desc" data-i18n="plan3-desc">Production-ready web application with scalable architecture, authentication system and modern UI.</p>
+      <h3 data-i18n="plan3-name">Aplicação Web Full Stack</h3>
+      <p class="pricing-desc" data-i18n="plan3-desc">Aplicação web pronta para produção com arquitetura escalável, sistema de autenticação e UI moderna.</p>
       <div class="pricing-price">from 750€</div>
       <ul class="pricing-features">
-        <li data-i18n="plan3-f1">Everything from Full Backend</li>
-        <li data-i18n="plan3-f2">Modern front-end (Blade-based UI)</li>
-        <li data-i18n="plan3-f3">Secure authentication (OAuth integration: Google, GitHub, Microsoft)</li>
-        <li data-i18n="plan3-f4">Role &amp; permission management</li>
-        <li data-i18n="plan3-f5">Optimised database design</li>
-        <li data-i18n="plan3-f6">Logging &amp; error handling system</li>
-        <li data-i18n="plan3-f7">Technical documentation</li>
+        <li data-i18n="plan3-f1">Tudo do plano Backend Completo</li>
+        <li data-i18n="plan3-f2">Front-end moderno (UI baseada em Blade)</li>
+        <li data-i18n="plan3-f3">Autenticação segura (OAuth: Google, GitHub, Microsoft)</li>
+        <li data-i18n="plan3-f4">Gestão de funções e permissões</li>
+        <li data-i18n="plan3-f5">Design de base de dados otimizado</li>
+        <li data-i18n="plan3-f6">Sistema de logging e gestão de erros</li>
+        <li data-i18n="plan3-f7">Documentação técnica</li>
       </ul>
     </div>
 
