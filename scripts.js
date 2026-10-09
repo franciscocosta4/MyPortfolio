@@ -29,3 +29,16 @@ document.addEventListener('keydown', (e) => {
 window.addEventListener('resize', () => {
   if (window.innerWidth > 768) closeMenu();
 });
+
+// CV Download
+const resumeBtn = document.getElementById('resume-btn');
+if (resumeBtn) {
+  resumeBtn.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.href = 'cv.pdf';
+    link.download = 'Francisco_Costa_CV.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
+}
