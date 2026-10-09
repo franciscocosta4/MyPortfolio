@@ -30,15 +30,20 @@ window.addEventListener('resize', () => {
   if (window.innerWidth > 768) closeMenu();
 });
 
-// CV Download
+// CV: download on desktop, open in new tab on mobile/tablet (so it can be viewed/shared/saved)
 const resumeBtn = document.getElementById('resume-btn');
 if (resumeBtn) {
   resumeBtn.addEventListener('click', () => {
-    const link = document.createElement('a');
-    link.href = 'cv.pdf';
-    link.download = 'Francisco_Costa_CV.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    const isMobileOrTablet = /Android|iPhone|iPad|iPod|Mobile|Tablet/i.test(navigator.userAgent) || (navigator.maxTouchPoints > 0 && window.matchMedia('(pointer: coarse)').matches);
+    if (isMobileOrTablet) {
+      window.open('cv.pdf', '_blank', 'noopener');
+    } else {
+      const link = document.createElement('a');
+      link.href = 'cv.pdf';
+      link.download = 'Francisco_Costa_CV.pdf';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
   });
 }
